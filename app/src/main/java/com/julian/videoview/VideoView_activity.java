@@ -46,15 +46,22 @@ public class VideoView_activity extends AppCompatActivity {
 
         //guarda la posicion del video en la que se quedó.
         outState.putInt("position",position);
+        outState.putBoolean("playing",videoView.isPlaying());
+
     }
 
-
+    @Override
+    protected void onStart() {
+        super.onStart();
+        videoView.start();
+    }
+/*
     @Override
     protected void onPause() {
         super.onPause();
-        videoView.pause();
+        //videoView.pause();
 
-    }
+    }*/
 
     @Override
     protected void onResume() {
@@ -66,8 +73,11 @@ public class VideoView_activity extends AppCompatActivity {
     protected void onRestoreInstanceState(Bundle savedInstanceState) {
         super.onRestoreInstanceState(savedInstanceState);
 
-        videoView.seekTo(savedInstanceState.getInt("position"));
+            videoView.seekTo(savedInstanceState.getInt("position"));
 
+        if(!savedInstanceState.getBoolean("playing")){
+            videoView.pause();
+        }
 
     }
 
