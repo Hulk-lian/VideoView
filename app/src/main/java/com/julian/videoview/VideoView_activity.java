@@ -5,13 +5,29 @@ import android.os.Environment;
 import android.support.annotation.RawRes;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Surface;
+import android.view.SurfaceHolder;
+import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
 public class VideoView_activity extends AppCompatActivity {
 
-   private VideoView videoView;
-    private MediaController mc;
+    private VideoView videoView;
+    private String urlLocal;
+    private boolean pause;
+    private int posVideo;
+
+    //controls
+    private Surface surfaceView;
+    private SurfaceHolder surfaceHolder;
+    private EditText edtPath;
+    private ImageButton imbPlay,imbStop,imbPause;
+
+
+
+   //private MediaController mc;
 
 
 
@@ -20,15 +36,20 @@ public class VideoView_activity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_video_view_activity);
 
+
+        // method that gives memory
+        inicialiceComponents();
+
+        /*
         videoView=(VideoView)findViewById(R.id.videoView);
-        mc=new MediaController(this);
+        //mc=new MediaController(this);
 
-        String urlLocal="android.resource://"+getPackageName()+"/"+R.raw.video;
-        String url="https:////www.youtube.com//watch?v=7M-jsjLB20Y" ;
+        urlLocal="android.resource://"+getPackageName()+"/"+R.raw.video;
 
-        videoView.setMediaController(mc);
+        //videoView.setMediaController(mc);
 
         videoView.setVideoPath(urlLocal);
+
 
         //por si esta en memoria external
         //videoView.setVideoPath(Environment.getExternalStorageDirectory().getAbsolutePath()+"nombreFichero");
@@ -36,6 +57,12 @@ public class VideoView_activity extends AppCompatActivity {
         //Uri uri= Uri.parse("android:resource://"+getPackageName()+"/"+R.raw.video);
 
         videoView.start();// no es recomendable usarlo
+        */
+    }
+
+    private void inicialiceComponents(){
+        
+
     }
 
     @Override

@@ -10,11 +10,47 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.julian.videoview.VideoView_activity">
 
-    <VideoView
+    <LinearLayout
+
+        android:id="@+id/lnlButtonsLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true">
+
+        <!--Stop Button -->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imbStop"
+            android:src="@drawable/stop"/>
+
+        <!--Pause Button -->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imbPause"
+            android:src="@drawable/pause"/>
+
+        <!--Play Button -->
+        <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/imbPlay"
+            android:src="@drawable/play"/>
+
+        <!-- Edit text with path-->
+        <EditText
+            android:id="@+id/edtpath"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:text=""/>
+
+
+    </LinearLayout>
+   <VideoView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/videoView"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+       android:layout_below="@+id/lnlButtonsLayout"/>
+
 </RelativeLayout>
